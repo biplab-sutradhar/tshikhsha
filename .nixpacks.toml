@@ -1,0 +1,17 @@
+# .nixpacks.toml
+[phases.setup]
+nixPkgs = ["python311", "nodejs_18", "pnpm"]
+
+[phases.install]
+cmds = [
+  "pnpm install",
+  "pnpm --filter server install-py"
+]
+
+[phases.build]
+cmds = [
+  "pnpm --filter frontend run build"
+]
+
+[start]
+cmd = "uvicorn packages/server/main:app --host 0.0.0.0 --port $PORT"
