@@ -1,17 +1,21 @@
 # .nixpacks.toml
 [phases.setup]
+# bring in Python, Node.js 18, and pnpm in the build image
 nixPkgs = ["python311", "nodejs_18", "pnpm"]
 
 [phases.install]
+# install all JS workspaces, then run your backend's install-py script
 cmds = [
   "pnpm install",
   "pnpm --filter server install-py"
 ]
 
 [phases.build]
+# build only the frontend workspace
 cmds = [
   "pnpm --filter frontend run build"
 ]
 
 [start]
+# start your FastAPI app on $PORT
 cmd = "uvicorn packages/server/main:app --host 0.0.0.0 --port $PORT"
