@@ -4,6 +4,7 @@
   "private": true,
   "repository": "https://github.com/biplab-sutradhar/tshikhsha.git",
   "scripts": {
+    "preinstall": "npm install -g pnpm",
     "build": "pnpm --filter web build",
     "dev": "pnpm --parallel --filter web --filter server dev",
     "start": "pnpm --parallel --filter web --filter server start",
