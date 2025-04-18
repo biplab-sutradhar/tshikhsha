@@ -1,0 +1,25 @@
+[project]
+name = "server"
+version = "2.0.0"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi (>=0.115.11,<0.116.0)",
+    "uvicorn (>=0.34.0,<0.35.0)",
+    "alembic (>=1.15.1,<2.0.0)",
+]
+
+[tool.poetry]
+packages = [{include = "server", from = "app"}]
+package-mode = false
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+isort = "^6.0.1"
+black = "^25.1.0"
+pylint = "^3.3.5"
+pytest-cov = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

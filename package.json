@@ -1,0 +1,22 @@
+{
+  "name": "team.shiksha",
+  "version": "2.0.0",
+  "private": true,
+  "repository": "https://github.com/TeamShiksha/team.shiksha.git",
+  "scripts": {
+    "build": "pnpm --filter web build",
+    "dev": "pnpm --parallel --filter web --filter server dev",
+    "start": "pnpm --parallel --filter web --filter server start",
+    "test": "pnpm --parallel --filter web --filter server test",
+    "coverage": "pnpm --parallel --filter web --filter server coverage",
+    "lint": "pnpm --parallel --filter web --filter server lint",
+    "check": "pnpm --filter web check && pnpm --filter server check",
+    "format": "pnpm --filter web format && pnpm --filter server format",
+    "postinstall": "pnpm --filter server install-py",
+    "activate": "pnpm --filter server activate"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "husky": "^9.1.7"
+  }
+}

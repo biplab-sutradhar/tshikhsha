@@ -1,0 +1,17 @@
+name: Deploy Frontend
+
+on:
+  workflow_dispatch:
+  push:
+   branches:
+      - stage
+      - prod
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: ${{ github.ref_name == 'stage' && 'STAGE' || 'PROD' }}
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v2
