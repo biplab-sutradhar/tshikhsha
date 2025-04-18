@@ -2,7 +2,7 @@
   "name": "team.shiksha",
   "version": "2.0.0",
   "private": true,
-  "repository": "https://github.com/TeamShiksha/team.shiksha.git",
+  "repository": "https://github.com/biplab-sutradhar/tshikhsha.git",
   "scripts": {
     "build": "pnpm --filter web build",
     "dev": "pnpm --parallel --filter web --filter server dev",
